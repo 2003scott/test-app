@@ -1,18 +1,10 @@
 // screens/NewsListScreen.js
 import React, { useState, useEffect } from 'react';
-import { View, Text, FlatList, TouchableOpacity, Image } from 'react-native';
+import { View, Text } from 'react-native';
 import axios from 'axios';
 import * as Font from 'expo-font'
 
-const NewsListScreen = ({ navigation }) => {
-  const [news, setNews] = useState([]);
-
-  useEffect(() => {
-    // Llamada a la API para obtener la lista de noticias
-    axios.get('https://api-chincha-notifi.onrender.com/articles')
-      .then(response => setNews(response.data))
-      .catch(error => console.error(error));
-  }, []);
+const NewsListScreen = () => {
 
   const [fontLoaded, setFontLoaded] = useState(false)
 
@@ -34,20 +26,10 @@ const NewsListScreen = ({ navigation }) => {
 
   return (
     <View>
-      <FlatList
-        data={news}
-        keyExtractor={(item) => item.id.toString()}
-        renderItem={({ item }) => (
-          <TouchableOpacity
-            onPress={() => navigation.navigate('NewsDetail', { newsId: item.id })}
-          >
-            <Text style={{fontFamily : "poppins-bold"}}>{item.id}</Text>
-            <Text style={{fontFamily : "poppins-regular"}}>{item.title}</Text>
-            <Text style={{fontFamily : "poppins-light"}}>{item.description}</Text>
-            <Image source={{ uri: item.image }} style={{ width: 100, height: 100 }} />
-          </TouchableOpacity>
-        )}
-      />
+      <Text style={{fontFamily : "poppins-bold"}}>aeaea</Text>
+            <Text style={{fontFamily : "poppins-regular"}}>sgwsgwsgwsg</Text>
+            <Text style={{fontFamily : "poppins-light"}}>sfdfsdfsdfdsfsdfdssss</Text>
+
     </View>
   );
 };
